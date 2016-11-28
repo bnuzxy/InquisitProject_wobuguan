@@ -1,0 +1,324 @@
+//一个失败的程序，但是框架大概是这样的...吧
+<item instruction>
+	/1 = "实验中请保持注意力高度集中
+屏幕上会出现两个词语（一上一下）并迅速消失，随后"
+</item>
+
+
+<item any>
+	/1 = "请按任意键开始实验"
+
+</item>
+
+<item fixation>
+	/1 = "+"
+</item>
+
+<item wordpair1>
+	/1 = "伤心"
+	/2 = "蓝天"
+</item>
+
+
+<item wordpair2>
+	/1 = "牙签"
+	/2 = "难受"
+</item>		
+
+
+<item wordpair3>
+	/1 = "沮丧"
+	/2 = "暖气"
+</item>
+
+
+<item wordpair4>
+	/1 = "痛苦"
+	/2 = "智商"
+</item>
+
+<item wordpair5>
+	/1 = "板凳"
+	/2 = "失望"
+</item>
+
+
+<item wordpair6>
+	/1 = "心碎"
+	/2 = "饼干"
+</item>
+
+<item character1>
+	/1 = "P"
+	/2 = "L"
+</item>
+
+<item character2>
+	/1 = "K"
+	/2 = "Y"
+</item>
+
+<item character3>
+	/1 = "W"
+	/2 = "S"
+</item>
+
+<item stimulus1>
+	/1 = "."
+</item>
+
+<item stimulus2>
+	/1 = "."
+</item>
+
+<item goodbyeinstruction>
+	/1="感谢您参与实验，再见！"
+</item>
+=====================================================================================================================================================================
+
+
+//定义刺激呈现的方式，text定义
+======================================================================================================================================================================
+//指导语
+<text instructiontxt>
+	/items = instruction
+	/fontstyle = ("宋体", 4pct)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/size = (1366,768)
+	/hjustify = center
+</text>
+
+
+<text anykeytxt>
+	/items = any
+	/vposition = 70 pct
+	/fontstyle = ("宋体", 24pt)
+	/txcolor = (255,255,255)
+	/txbgcolor = (transparent)
+</text>
+//注视点
+<text fixation>
+	/items = fixation
+	/fontstyle = ("Arial", 48pt)
+	/txcolor = (255,255,255)
+	/txbgcolor = (transparent)
+</text>
+//给被试反馈
+
+<text wordpair1txt>
+	/items = wordpair1
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text wordpair2txt>
+	/items = wordpair2
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text wordpair3txt>
+	/items = wordpair3
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text wordpair4txt>
+	/items = wordpair4
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text wordpair5txt>
+	/items = wordpair5
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text wordpair6txt>
+	/items = wordpair6
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text character1txt>
+	/items = character1
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text character2txt>
+	/items = character2
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text character3txt>
+	/items = character3
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/select = 1
+	/position = (600,200)
+	/select = 2
+	/position = (600,500)
+</text>
+
+<text stimulus1txt>
+	/items = stimulus1
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/position = (600,200)
+</text>
+
+<text stimulus2txt>
+	/items = stimulus2
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/position = (600,500)
+</text>
+//定义trials，定义有效的按键反应，正确的按键反应，刺激呈现顺序等信息
+======================================================================================================================================================================
+<trial instruction>
+	/validresponse = (anyresponse)
+	/stimulusframes = [1=instructiontxt,anykeytxt]
+	/recorddata = false
+</trial>
+
+<trial wordpair1>
+	/stimulusframes = [1=wordpair1txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial wordpair2>
+	/stimulusframes = [1=wordpair2txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial wordpair3>
+	/stimulusframes = [1=wordpair3txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial wordpair4>
+	/stimulusframes = [1=wordpair4txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial wordpair5>
+	/stimulusframes = [1=wordpair5txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial wordpair6>
+	/stimulusframes = [1=wordpair6txt]
+	/trialduration = 14
+	/recorddata = false
+</trial>
+
+<trial character1>
+	/stimulusframes = [1=character1txt]
+	/trialduration = 186
+	/recorddata = false
+</trial>
+
+<trial character2>
+	/stimulusframes = [1=character2txt]
+	/trialduration = 186
+	/recorddata = false
+</trial>
+
+<trial character3>
+	/stimulusframes = [1=character3txt]
+	/trialduration = 186
+	/recorddata = false
+</trial>
+
+<trial stimulus1>
+	/stimulusframes = [1 = stimulus1txt]
+	/validresponse = ("F","J")
+	/correctresponse = ("F")
+</trial>
+
+<trial stimulus2>
+	/stimulusframes = [1 = stimulus2txt]
+	/validresponse = ("F","J")
+	/correctresponse = ("J")
+</trial>
+
+//定义blocks,定义属性信息，加入trails
+======================================================================================================================================================================
+<block instructionblk>
+	/screencolor = (0,0,0)
+	/trials = [1 = instruction]
+</block>
+
+
+<block wordpairblk>
+	/screencolor = (0,0,0)
+	/trials = [1-6 = noreplace(wordpair1,wordpair2,wordpair3,wordpair4,wordpair5,wordpair6)]
+</block>
+
+<block characterblk>
+	/screencolor = (0,0,0)
+	/trials = [1-6 = noreplace(character1,character2,character3)]
+</block>
+
+<block stimulusblk>
+	/screencolor = (0,0,0)
+	/blockfeedback = (meanlatency,correct)
+	/trials = [1-6 = noreplace(stimulus1,stimulus2)]
+</block>
+//定义experiment, 加入blocks
+======================================================================================================================================================================
+<expt>
+	/blocks = [1 = instructionblk; 2 = characterblk; 3 = characterblk; 4 = stimulusblk]
+</expt>
