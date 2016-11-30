@@ -1,0 +1,196 @@
+<item instruction>
+	/1 = "实验中请保持注意力高度集中
+屏幕上会出现两个词语（一左一右）并迅速消失，
+随后是两个上下排列的字母，最后会出现一个探测点“.”，
+如果这个探测点出现在左侧请按“F”，
+如果这个探测点出现在右侧请按“J”，
+如有问题请及时询问实验员"
+</item>
+
+
+<item any>
+	/1 = "请按任意键开始实验"
+
+</item>
+
+<item fixation>
+	/1 = "+"
+</item>
+
+<item word>
+/1="沉痛    忙碌"
+/2="挫折    惊讶"
+/3="忧郁    好奇"
+/4="利害    消极"
+/5="忙碌    悲观"
+/6="遗址    苦难"
+/7="苍白    艰巨"
+/8="拥挤    单独"
+/9="顾虑    抵御"
+/10="生气    担心" 
+/11="震惊    烦燥"  
+/12="混乱    剧烈"
+/13="杰出    夸张"
+/14="欢快    急切"
+/15="单纯    保守"
+/16="全面    严肃"
+/17="美丽    奇怪"
+/18="精干    厉害"
+/19="柔弱    健美"
+/20="拘谨    瑰丽"
+/21="零星    爽朗"
+/22="降临    支援"
+/23="遗留    端详"
+/24="苦心    忠心"
+</item>
+
+<item character>
+	/1 = "P    L"
+	/2 = "K    Y"
+	/3 = "W    S"
+</item>
+
+<item stimulus1>
+	/1 = "·"
+</item>
+
+<item stimulus2>
+	/1 = "·"
+</item>
+
+<item goodbyeinstruction>
+	/1="感谢您参与实验，再见！"
+</item>
+=====================================================================================================================================================================
+
+
+//定义刺激呈现的方式，text定义
+======================================================================================================================================================================
+//指导语
+<text instructiontxt>
+	/items = instruction
+	/fontstyle = ("宋体", 4pct)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/size = (1366,768)
+	/hjustify = center
+</text>
+
+
+<text anykeytxt>
+	/items = any
+	/vposition = 70 pct
+	/fontstyle = ("宋体", 24pt)
+	/txcolor = (255,255,255)
+	/txbgcolor = (transparent)
+</text>
+//注视点
+<text fixation>
+	/items = fixation
+	/fontstyle = ("Arial", 48pt)
+	/txcolor = (255,255,255)
+	/txbgcolor = (transparent)
+</text>
+
+<text wordtxt>
+	/items = word
+	/fontstyle = ("宋体",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/hjustify = center
+</text>
+
+<text charactertxt>
+	/items = character
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/hjustify =  center
+</text>
+
+<text stimulus1txt>
+	/items = stimulus1
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/halign = left
+	/hposition = 55%
+</text>
+
+<text stimulus2txt>
+	/items = stimulus2
+	/fontstyle = ("Arial",60ptc)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/halign = right
+	/hposition = 45%
+</text>
+
+<text goodbyeinstructiontxt>
+	/items = goodbyeinstruction
+	/fontstyle = ("宋体", 4pct)
+	/txbgcolor = (0,0,0)
+	/txcolor = (255,255,255)
+	/size = (1366,768)
+	/hjustify = center
+</text>
+//定义trials，定义有效的按键反应，正确的按键反应，刺激呈现顺序等信息
+======================================================================================================================================================================
+<trial instruction>
+	/validresponse = (anyresponse)
+	/stimulusframes = [1=instructiontxt,anykeytxt]
+	/recorddata = false
+</trial>
+
+<trial word>
+	/stimulusframes = [1=wordtxt]
+	/trialduration = 114
+	/recorddata = false
+</trial>
+
+<trial character>
+	/stimulusframes = [1=charactertxt]
+	/trialduration = 286
+	/recorddata = false
+</trial>
+
+
+<trial stimulus1>
+	/stimulusframes = [1 = stimulus1txt]
+	/validresponse = ("F","J")
+	/correctresponse = ("F")
+</trial>
+
+<trial stimulus2>
+	/stimulusframes = [1 = stimulus2txt]
+	/validresponse = ("F","J")
+	/correctresponse = ("J")
+</trial>
+
+<trial goodbyeinstruction>
+	/validresponse = (anyresponse)
+	/stimulusframes = [1=goodbyeinstructiontxt]
+	/recorddata = false
+</trial>
+//定义blocks,定义属性信息，加入trails
+======================================================================================================================================================================
+<block instructionblk>
+	/screencolor = (0,0,0)
+	/trials = [1 = instruction]
+</block>
+
+
+<block wordblk>
+	/screencolor = (0,0,0)
+	/trials = [1= noreplacenorepeat(word);2 = noreplace(character); 3 = noreplace(stimulus1,stimulus2)]
+</block>
+
+<block goodbyeinstructionblk>
+	/screencolor = (0,0,0)
+	/trials = [1 = goodbyeinstruction]
+</block>
+//定义experiment
+======================================================================================================================================================================
+<expt>
+	/blocks = [1 = instructionblk; 2-25=noreplace(wordblk);26 = goodbyeinstructionblk]
+</expt>
